@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        ___b();
         if (matrix.empty()) return {}; 
 
         int l = 0;
@@ -36,5 +37,13 @@ public:
         }
 
         return ans;
+    }
+
+
+private: 
+    void ___b(){
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
     }
 };
