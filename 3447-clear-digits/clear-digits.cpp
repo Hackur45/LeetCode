@@ -5,19 +5,21 @@ public:
     }
     string clearDigits(string s) {
         int n = s.length();
-        vector<char> v;
+        stack<char> st;
 
         for(auto &a : s){
             if(!isdigit(a)){
-                v.push_back(a);
+                st.push(a);
             }else{
-                v.pop_back();
+                st.pop();
             }
         }
         string ans = "";
-        for(auto &a:v){
-            ans += a;
+        while(!st.empty()){
+            ans += st.top();
+            st.pop();
         }
+        reverse(ans.begin(),ans.end());
         return ans;
     }
 };
