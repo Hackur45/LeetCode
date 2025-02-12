@@ -9,10 +9,10 @@ public:
         return sum;
     }
     int maximumSum(vector<int>& nums) {
-        
+        cin.tie(0);
         int n = nums.size();
-
-        map<int, vector<int>> mp;
+        if(n == 1) return -1;
+        unordered_map<int, vector<int>> mp;
 
         for (auto& a : nums) {
             mp[digitsum(a)].push_back(a);
