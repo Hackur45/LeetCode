@@ -4,14 +4,9 @@ class Solution {
 public:
     int minOperations(vector<int>& nums, int k) {
         ___b();
-        priority_queue <ll, vector<ll>, greater<ll> > pq; 
+        priority_queue <ll, vector<ll>, greater<ll> > pq(nums.begin(), nums.end()); 
         int n = nums.size();
         int ans = 0;
-
-        for(auto &a : nums){
-            pq.push(a);
-        }
-
         while(pq.top() < k){
             ll a = pq.top();
             pq.pop();
