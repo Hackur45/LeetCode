@@ -12,8 +12,7 @@ public:
             pq.pop();
             ll b = pq.top();
             pq.pop();
-            ll res = min(a,b) * 2 + max(a,b);
-            pq.push(res);
+            pq.push(min(a,b) * 2 + max(a,b));
             ans++;
         }
 
