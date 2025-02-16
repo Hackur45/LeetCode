@@ -2,21 +2,15 @@ class Solution {
 public:
     vector<int> numberGame(vector<int>& nums) {
         ___b();
-        int n = nums.size();
-        sort(nums.begin(),nums.end());
-        vector<int> arr;
-        int i=0;
-        while(i < n){
+        sort(nums.begin(), nums.end());
+        vector<int> ans;
+        for(int i=0; i<nums.size()-1; i+=2){
             int alice = nums[i];
-            i++;
-            if(i >= n) break;
-            int bob = nums[i];
-            i++;
-            arr.push_back(bob);
-            arr.push_back(alice);
+            int bob = nums[i+1];
+            ans.push_back(bob);
+            ans.push_back(alice);
         }
-
-        return arr;
+        return ans;
     }
 
 private:
