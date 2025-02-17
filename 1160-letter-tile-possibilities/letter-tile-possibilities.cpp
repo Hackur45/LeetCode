@@ -1,31 +1,22 @@
 class Solution {
 public:
-    set<string> st;
-    
-    void find(string s, map<char, int> mp, string main) {
-        if (st.find(s) != st.end()) {
-            return;
-        }
-
-        st.insert(s);
-
-        for (auto &[key, val] : mp) {
+    void find(unordered_map<char, int>& mp, int& count) {
+        for (auto& [key, val] : mp) {
             if (val > 0) {
-                mp[key]--; 
-                find(s + key, mp, main);  
-                find(key + s, mp, main); 
-                mp[key]++; 
+                val--;
+                count++;
+                find(mp, count);
+                val++;
             }
         }
     }
-
     int numTilePossibilities(string tiles) {
-        map<char, int> mp;
-        for (char tile : tiles) {
-            mp[tile]++;
+        unordered_map<char, int> mp;
+        for (int i = 0; i < tiles.size(); i++) {
+            mp[tiles[i]]++;
         }
-
-        find("", mp, tiles); 
-        return st.size() - 1;
+        int count = 0;
+        find(mp, count);
+        return count;
     }
 };
