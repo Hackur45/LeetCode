@@ -37,7 +37,7 @@ public:
             findNsizeStrings(v, s, n, k);
             if (v.size() == k) return v.back();
         }
-
+        
         return "";
     }
 };
