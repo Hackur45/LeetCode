@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> findDisappearedNumbers(vector<int>& nums) {
+        boostCode();
         int n = nums.size();
 
         for(int i = 0; i < n; i++) {
@@ -14,5 +15,12 @@ public:
         }
 
         return result;
+    }
+
+private:
+    void boostCode(){
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
     }
 };
