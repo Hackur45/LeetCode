@@ -1,21 +1,27 @@
 class MyCalendar {
 public:
-    map<int, int> mp;
+    map<int,int> mp;
     MyCalendar() {
         
     }
     
     bool book(int startTime, int endTime) {
-        for (auto it = mp.begin(); it != mp.end(); ++it) {
-            int start = it->first;
-            int end = it->second;
-            if (max(start, startTime) < min(end, endTime)) {
+        mp[startTime] += 1;
+        mp[endTime] -= 1;
+
+        int ts = 0;
+
+        for(auto &[key,val] : mp){
+            ts += val;
+            if(ts > 1){
+                //revert
+                mp[startTime] -= 1;
+                mp[endTime] += 1;
                 return false;
             }
         }
-        mp[startTime] = endTime;
         return true;
-    }
+    } 
 };
 
 /**
