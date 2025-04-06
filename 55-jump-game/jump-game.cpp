@@ -13,7 +13,7 @@ public:
             // if(jump > maxJ){
             //     maxJ += jump;
             // }
-            if(i > maxJ) return false;
+            if(i > maxJ) return false;  //agar mai filhaaal 3 tak he ja skta mgr mere i wla loop if crosses maxJ without satisfying condition matlab beech me kahi zero mila hai
             maxJ = max(maxJ,i+nums[i]);
         }
 
