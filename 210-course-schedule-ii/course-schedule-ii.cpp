@@ -1,6 +1,9 @@
 class Solution {
 public:
     vector<int> findOrder(int n, vector<vector<int>>& prerequisites) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(nullptr);
+
         vector<vector<int>> graph(n,vector<int>());
 
         for(vector<int> &a : prerequisites){
