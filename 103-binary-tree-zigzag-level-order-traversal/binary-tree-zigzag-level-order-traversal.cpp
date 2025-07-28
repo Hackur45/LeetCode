@@ -11,6 +11,13 @@
  */
 class Solution {
 public:
+    /*
+    * Deque aur flag use kiya har level ka direction toggle karne ke liye.
+    * Root null hone par crash kyunki nullptr deque me gaya aur curr->val dereference hua.
+    * Hamesha push\_front use kiya is wajah se children ka order bigad gaya, zigzag ka sequence galat hoga.
+    * Idea sahi tha: deque se front/back nikalna aur direction badalna.
+    * Fix chahiye: root null check karo aur direction ke hisaab se kabhi push\_back, kabhi push\_front use karo
+    */
     vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
         vector<vector<int>> ans;
         if(root == nullptr) return ans;
