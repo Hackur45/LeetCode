@@ -1,7 +1,7 @@
 import math
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        ans =[[]]
+        ans =[]
 
         for i in range(1,numRows+1):
             temp = []
@@ -11,4 +11,4 @@ class Solution:
             
             ans.append(temp)
         
-        return ans[1:]
+        return ans
