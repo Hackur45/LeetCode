@@ -1,8 +1,7 @@
-DELETE FROM Person
-WHERE id NOT IN (
-    SELECT * FROM (
-        SELECT MIN(id)
-        FROM Person
-        GROUP BY email
-    ) AS temp
-);
+delete from person
+where id not in(
+    select * from (
+        select min(id) from person
+        group by email
+    ) as a 
+)
