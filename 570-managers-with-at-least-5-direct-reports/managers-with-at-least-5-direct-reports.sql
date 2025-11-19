@@ -1,14 +1,9 @@
-WITH temp AS (
-    SELECT 
-        a.id,
-        a.name,
-        COUNT(*) AS cnt
-    FROM Employee a
-    JOIN Employee b
-        ON a.id = b.managerId
-    GROUP BY a.id, a.name
+# Write your MySQL query statement below
+with getmgid as(
+    select managerId as id from employee
+    group by managerid
+    having count(managerId) >= 5
 )
-SELECT 
-name
-FROM temp
-WHERE cnt >= 5;
+select a.name
+from employee a join getmgid b
+on a.id = b.id
